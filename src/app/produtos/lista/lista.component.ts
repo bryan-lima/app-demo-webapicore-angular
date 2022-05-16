@@ -21,4 +21,12 @@ export class ListaComponent implements OnInit {
         error => this.errorMessage = error,
     );   
   }
+
+  public CarregarImagem(produto: Produto){
+    let extensaoImagem = produto.imagem.slice(-3);
+
+    let imagemBase64 = `data:image/${extensaoImagem};base64,${produto.imagemUpload}`;
+
+    return imagemBase64;
+  }
 }
