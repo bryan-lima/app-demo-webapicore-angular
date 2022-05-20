@@ -53,7 +53,8 @@ export class CadastroComponent implements OnInit {
     if (this.produtoForm.valid && this.produtoForm.dirty) {
 
       let produtoForm = Object.assign({}, this.produto, this.produtoForm.value);
-      produtoForm.ativo = this.produtoForm.get('ativo').value
+      produtoForm.ativo = this.produtoForm.get('ativo').value;
+      produtoForm.valor = Number(produtoForm.valor);
 
       this.produtoHandleAlternativo(produtoForm)
         .subscribe(
